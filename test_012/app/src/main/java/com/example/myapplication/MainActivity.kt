@@ -2,6 +2,7 @@ package com.example.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 
 class MainActivity : AppCompatActivity() {
     // Здесь код не исполняется, на уровне класса просто делается присвоение(инициализация) для того,
@@ -11,7 +12,38 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Log.d("MyLogMAct", "onCreate")
+    }
 
+    override fun onStart() {
+        super.onStart()
+        Log.d("MyLogMAct","onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("MyLogMAct","onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("MyLogMAct", "onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("MyLogMAct","onStop")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d("MyLogMAct","onRestart")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("MyLogMAct","onDestroy")
+    }
     // У Activity есть 7 основных функций(методов) жизненного цикла и запускаются они в разный момент.
     // 01 - onCreate()
     // 02 - onStart()
@@ -21,7 +53,7 @@ class MainActivity : AppCompatActivity() {
     // 06 - onRestart()
     // 07 - onDestroy()
     // Система вызывает данные функции при изменении состояния Activity.
-    }
+
 }
 
 /*
