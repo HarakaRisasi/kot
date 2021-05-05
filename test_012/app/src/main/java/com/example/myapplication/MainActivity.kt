@@ -17,32 +17,32 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        Log.d("MyLogMAct","onStart")
+        Log.d("MyLogMStart","onStart")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d("MyLogMAct","onResume")
+        Log.d("MyLogMResume","onResume")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d("MyLogMAct", "onPause")
+        Log.d("MyLogMPause", "onPause")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d("MyLogMAct","onStop")
+        Log.d("MyLogMStop","onStop")
     }
 
     override fun onRestart() {
         super.onRestart()
-        Log.d("MyLogMAct","onRestart")
+        Log.d("MyLogMRestart","onRestart")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("MyLogMAct","onDestroy")
+        Log.d("MyLogMDestroy","onDestroy")
     }
     // У Activity есть 7 основных функций(методов) жизненного цикла и запускаются они в разный момент.
     // 01 - onCreate()
