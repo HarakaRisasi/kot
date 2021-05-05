@@ -1,16 +1,50 @@
 package com.example.myapplication
-
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
+import android.util.Log
+import android.view.View
+import android.widget.TextView
+
+
+//Здесь храняться все задействованные в приложении экраны и логика.
 
 class MainActivity : AppCompatActivity() {
     // Здесь код не исполняется, на уровне класса просто делается присвоение(инициализация) для того,
     // чтобы зарезервировать в памяти некоторые значения.
 
-    // Код исполняется в методах.
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    //onCreate - цикл жизни activity.
+    override fun onCreate(nameOf_class: Bundle?) {
+        super.onCreate(nameOf_class)
+
+        //Взять ресурс из категории "layout" при помощи ссылки на него через "R"
+        //В данном примере я как бы говорю "Что надо взять всю разметку из layout.activity_main
+        // и взять ее в тот момент, когда все ресурсы будут готовы (в момент выполнения onCreate)"
         setContentView(R.layout.activity_main)
+    }
+
+    // Событие, которое происходит при нажатии(взаимодействии) на элемент называется
+    // Аргументы view с наследованием(:) View добавляются затем чтобы активировать
+    // onClick у того View на который эта функция будет влиять.
+
+    /**
+     * Эта функция при нажатии на view<Button id:button_test>
+     *     изменяет переменную text внутри view<TextView id:textView_3>
+     *
+     * Для ее работы требуется изменить атрибут onClick для view<Button id:button_test>
+     *     на значение <onClickTest> - тоесть имя этой функции.
+     */
+    fun onClickTest(view : View){
+        //Получаю доступ к View<name> по его id.
+        //TextView - это класс.
+        val textV = findViewById<TextView>(R.id.textView_3)
+
+        textV.text = "Hello from Haraka!"
+    }
+}
+
+
+    // Код исполняется в методах.
 
     // У Activity есть 7 основных функций(методов) жизненного цикла и запускаются они в разный момент.
     // 01 - onCreate()
@@ -21,8 +55,6 @@ class MainActivity : AppCompatActivity() {
     // 06 - onRestart()
     // 07 - onDestroy()
     // Система вызывает данные функции при изменении состояния Activity.
-    }
-}
 
 /*
 onCreate()

@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+Здесь храняться инструкции (Как будет выглядеть экран приложения).
+Тоесть здесь хранятся все View, которые будут рисоваться.
+
+Можно провести аналогию с чертежами. И пока они не будут воссозданы,
+до этого проект из себя ничего не представляет. Здесь отрисовываются все
+элементы "Activity".
+-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!--
+    Когда мы добавляем элементы, то к ним сразу же надо добавлять идентификатор.
+    Чтобы позже появилась возможность изменять элементы, в Current File или во
+    всём проекте.
+
+    А так же создается возможность получить доступ к элементу из Кода и что-то
+    с ним сделать, например из "MainActivity" файла.
+    -->
     <TextView
+        android:id="@+id/textView_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
@@ -14,5 +32,17 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:onClick="onClickTest"
+        android:text="button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_3"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
