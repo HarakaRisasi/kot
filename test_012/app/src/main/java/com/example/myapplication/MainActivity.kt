@@ -11,8 +11,9 @@ import android.widget.TextView
 import com.example.myapplication.databinding.ActivityMainBinding
 
 
-//Здесь храняться все задействованные в приложении экраны и логика.
-
+// View binding.
+// Это фитча позволяет писать болле простой код чтобы взаимодействовать с View.
+// В большинстве случаев привязка просмотра заменяет findViewById.
 class MainActivity : AppCompatActivity() {
     lateinit var bindingClass : ActivityMainBinding
 
